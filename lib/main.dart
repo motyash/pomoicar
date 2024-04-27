@@ -1,99 +1,45 @@
 import 'package:flutter/material.dart';
-<<<<<<< Updated upstream
-=======
-import 'package:firebase_core/firebase_core.dart'; // Импорт Firebase Core
-import 'firebase_options.dart'; // Опции Firebase, сгенерированные при настройке
-import 'mainscreen.dart'; // Предположим, что `MainScreen` в отдельном файле
->>>>>>> Stashed changes
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart'; // Импорт конфигурации Firebase
+import 'mainscreen.dart'; // Экран после инициализации
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // Убедиться, что сервисы Flutter готовы
-  await Firebase.initializeApp( // Инициализация Firebase
-    options: DefaultFirebaseOptions.currentPlatform, // Используем опции из файла конфигурации
-  );
+  WidgetsFlutterBinding.ensureInitialized(); // Инициализация Flutter
 
-  runApp(Pomoikar()); // Запуск вашего приложения
-}
-
-class Pomoikar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MainScreen(),
+  // Обработка возможных ошибок при инициализации Firebase
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
     );
+  } catch (e) {
+    print("Ошибка при инициализации Firebase: $e");
+    // Вывод сообщения об ошибке или другое действие
   }
+
+  runApp(Pomoikar());
 }
 
-class MainScreen extends StatefulWidget {
+class Pomoikar extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _PomoikarState createState() => _PomoikarState();
 }
 
-class _MainScreenState extends State<MainScreen> {
-  int _selectedIndex = 0;
+class _PomoikarState extends State<Pomoikar> {
+  bool _isDarkMode = false; // Инициализация переменной
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Раздел 1'),
-    Text('Раздел 2'),
-    Text('Раздел 3'),
-    Text('Раздел 4'),
-    Text('Раздел 5'),
-  ];
-
-  void _onItemTapped(int index) {
+  void _toggleTheme() {
     setState(() {
-<<<<<<< Updated upstream
-      _selectedIndex = index;
-=======
-      _isDarkMode = !_isDarkMode; // Переключение между режимами
->>>>>>> Stashed changes
+      _isDarkMode = !_isDarkMode; // Переключение между темами
     });
   }
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< Updated upstream
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Pomoikar'),
-      ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed, // Это позволяет видеть все иконки, даже когда они не активны
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Главная',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Поиск',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: 'Уведомления',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Избранное',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Профиль',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.deepOrange,
-        onTap: _onItemTapped,
-=======
     return MaterialApp(
-      theme: _isDarkMode ? ThemeData.dark() : ThemeData.light(), // Используем темную или светлую тему
+      theme: _isDarkMode ? ThemeData.dark() : ThemeData.light(),
       home: MainScreen(
-        isDarkMode: _isDarkMode, // Передаем текущее состояние
+        isDarkMode: _isDarkMode, // Передаем значение переменной
         toggleTheme: _toggleTheme, // Передаем функцию переключения
->>>>>>> Stashed changes
       ),
     );
   }

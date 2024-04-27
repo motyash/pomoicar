@@ -1,42 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'target_screen.dart'; // Убедитесь, что импорт правильный
+import 'target_screen.dart'; // Экран после успешной регистрации
+import 'firebase_helper.dart'; // Импортируем файл с функцией `addUserToFirebase`
 
 class RegistrationScreen extends StatelessWidget {
-  final TextEditingController _nameController = TextEditingController(); // Контроллер для имени
+  final TextEditingController _nameController = TextEditingController();
+  final String phone;
+
+  RegistrationScreen({required this.phone});
 
   Future<void> _registerUser(BuildContext context) async {
+    var auth = FirebaseAuth.instance;
+
+    if (auth.currentUser == null) { // Если пользователь не авторизован
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Пользователь не авторизован")),
+      );
+      return;
+    }
+
     String userName = _nameController.text;
 
-    if (userName.isEmpty) { // Проверка, что имя не пустое
+    if (userName.isEmpty) { // Если имя пустое
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Имя не может быть пустым")),
       );
-      return; // Если имя пустое, ничего не происходит
+      return;
     }
 
-    var auth = FirebaseAuth.instance;
+    try {
+      await addUserToFirebase(auth.currentUser!.uid, userName, phone); // Сохраняем данные в Firebase
 
-    if (auth.currentUser != null) { // Если пользователь аутентифицирован
-      try {
-        // Сохраняем данные пользователя в Firestore
-        await FirebaseFirestore.instance.collection("users").doc(auth.currentUser!.uid).set({
-          "name": userName,
-        });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Пользователь зарегистрирован")),
+      );
 
-        // Навигация после успешной регистрации
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => TargetScreen(user: auth.currentUser!), // Передаем требуемый параметр
-          ),
-        );
-      } catch (e) { // Обработка ошибок
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Ошибка при регистрации: ${e.toString()}")),
-        );
-      }
+      // Переход к целевому экрану после регистрации
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => TargetScreen(user: auth.currentUser!), // Передаем текущего пользователя
+        ),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Ошибка при регистрации: ${e.toString()}")), // Обратная связь при ошибке
+      );
     }
   }
 
@@ -47,12 +56,14 @@ class RegistrationScreen extends StatelessWidget {
         title: Text("Регистрация"),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0), // Проверьте правильность скобок и запятых
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Введите ваше имя"),
-            SizedBox(height: 10), // Убедитесь, что скобки правильно расставлены
+            Text(
+              "Введите ваше имя",
+              style: TextStyle(fontSize: 18),
+            ),
             TextField(
               controller: _nameController,
               decoration: InputDecoration(
@@ -60,9 +71,9 @@ class RegistrationScreen extends StatelessWidget {
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 10), // Исправлено написание
+            SizedBox(height: 10),
             ElevatedButton(
-              onPressed: () => _registerUser(context), // Обработчик кнопки регистрации
+              onPressed: () => _registerUser(context), // Обработчик кнопки
               child: Text("Зарегистрироваться"),
             ),
           ],

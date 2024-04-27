@@ -26,5 +26,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:347832975203:ios:22b3431473f0353442dd56</string>
+	<key>DATABASE_URL</key>
+	<string>https://pomoicar-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>
 </plist>

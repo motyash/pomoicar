@@ -46,11 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-<<<<<<< Updated upstream
-		+xtEMn/Mx6H6xUUcREBwLllEflI=
-=======
-		W0JMI1SThux0GrQQFX3FcsZWKA4=
->>>>>>> Stashed changes
+		3hNeoyiJBX4+G0mePBuLmTa7/KI=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -58,11 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-<<<<<<< Updated upstream
-		hJ1uhd9mt64oFSteoSjEAqVT7Gs=
-=======
-		KJNisHWJUEhCCdZpwcPJhikdSM0=
->>>>>>> Stashed changes
+		xrK1UqqpBITiCQ+y2wrN38xPabM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -78,11 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-<<<<<<< Updated upstream
-		sEzUcP8szJOChZ1wjqKOD5t0LFE=
-=======
-		cs2UtWuohdyQZbT8Ft8BytLdglo=
->>>>>>> Stashed changes
+		BjEgr16NDqIr1Y2G22qV0sq0ENs=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -94,11 +82,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-<<<<<<< Updated upstream
-		fNUgkYhbyXhac+guR+iCf617zp0=
-=======
-		Rz9WujQ38/VeWWIvvRAhh5u66D8=
->>>>>>> Stashed changes
+		I48t7Ei4zdFCjx+rY+poYBDGuis=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -223,6 +207,18 @@
 		<key>Frameworks/FirebaseCoreInternal.framework/_CodeSignature/CodeResources</key>
 		<data>
 		WxAjo6TO7M9hPBigiNugbDYMFrA=
+		</data>
+		<key>Frameworks/FirebaseDatabase.framework/FirebaseDatabase</key>
+		<data>
+		fgM9x89+fFTEY0OTeWvhJMNm1SU=
+		</data>
+		<key>Frameworks/FirebaseDatabase.framework/Info.plist</key>
+		<data>
+		KBqG/UHk7g8xKrKvpwIU6C8Bjbs=
+		</data>
+		<key>Frameworks/FirebaseDatabase.framework/_CodeSignature/CodeResources</key>
+		<data>
+		n938jPXeN7T78tAzd0YoWzTteGo=
 		</data>
 		<key>Frameworks/FirebaseFirestore.framework/FirebaseFirestore</key>
 		<data>
@@ -426,7 +422,7 @@
 		</data>
 		<key>Frameworks/absl.framework/absl</key>
 		<data>
-		Rv05KxriYny26wLtrqvI79Kz2ns=
+		cDCDGVOYu7sTQnSZ5SEwvMPT55k=
 		</data>
 		<key>Frameworks/absl.framework/xcprivacy.bundle/Info.plist</key>
 		<data>
@@ -446,7 +442,7 @@
 		</data>
 		<key>Frameworks/grpc.framework/grpc</key>
 		<data>
-		mBJBkeJEOe2u58zr7ERcHajvx+A=
+		3Oc2hh0p4VaQT3k7yfruuw08qYQ=
 		</data>
 		<key>Frameworks/grpc.framework/grpc.bundle/Info.plist</key>
 		<data>
@@ -566,7 +562,7 @@
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
-		aNPUId/14Qx0miyByjp2Jz7v06I=
+		73kcYkhc+E+sQ0OH+08j3OCIWjI=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -653,11 +649,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-<<<<<<< Updated upstream
-			xum9HvsDU59gK7+8R8akTrusFW3fB/2eB8WhnGZeOqo=
-=======
-			WO5MsahBfChhrLQAoG9bZu5lDtR6yidH888X2Uea1gI=
->>>>>>> Stashed changes
+			PNUrz5DsjJhfJcG+VuHE83P+7hizvmZUBGycUCMkA2I=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -671,11 +663,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-<<<<<<< Updated upstream
-			gnkLJ1C6JZBNrGI0W5UF7PzTj1OokQMV5exUKlrgkY0=
-=======
-			uW8WJUP/K9lCB/hVcsXM7ZzEO9HJJq/KY9U7lGHkLVk=
->>>>>>> Stashed changes
+			HARbxd4JZUIrmsfO8AG9j2+1793H0SKHBFagqWehRes=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -703,11 +691,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-<<<<<<< Updated upstream
-			qIshGhnt9x0o1cEL2zGCG6WiLpjhDMTDb8/2KdtINLM=
-=======
-			rf/j1qKYQ7GrzIJb/SQNLNkBsHsKWHkVllwK41MuNEM=
->>>>>>> Stashed changes
+			ksBzHeYz5xd8zAyNPsTvdOXpp/Txe/ifq6/evnt6d0Y=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -728,11 +712,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-<<<<<<< Updated upstream
-			G8IWIhgqhCwUjUhYaiE0L+0Z8NvUT4/JNDJ/cykWS5Q=
-=======
-			U98NK6cMOjdl+UIbezA9LQEKc0fTCwzO2009Q3CNe5Y=
->>>>>>> Stashed changes
+			23XsSIIq69YFNUhD+n8SOEewt3kkxE6HfrrsLkVuD0M=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -950,6 +930,27 @@
 			<key>hash2</key>
 			<data>
 			vxrG+lGKdjR1FOVGtXdOl74Eb5GxNArZ2w+rkTXAULA=
+			</data>
+		</dict>
+		<key>Frameworks/FirebaseDatabase.framework/FirebaseDatabase</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BXPNGNWvKnVFTFw+FzojueuHKPyQMypD2+Wjx0Lxt3Y=
+			</data>
+		</dict>
+		<key>Frameworks/FirebaseDatabase.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kvuR09QAaGe6CHpLXJ94Fdf7gRl1DQ+zgYgF7+iv4G4=
+			</data>
+		</dict>
+		<key>Frameworks/FirebaseDatabase.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			c8gvHmxLHV9hYeDtTodvfq+2nuw3IhGLxV10HQ75CCY=
 			</data>
 		</dict>
 		<key>Frameworks/FirebaseFirestore.framework/FirebaseFirestore</key>
@@ -1306,7 +1307,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ImVs4as4TI2+84R269YfIRki2FaU3Q6lYQEHx0Nn8bE=
+			eUNZH7FSynYml2JMGmhQrn6TJk6J3o5MiYYIoKXUQP4=
 			</data>
 		</dict>
 		<key>Frameworks/absl.framework/xcprivacy.bundle/Info.plist</key>
@@ -1341,7 +1342,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EUmQfhESbmM38o36zbyxXbjZMs6ioD1eiQ5Jjrwinhk=
+			oGBi7ProOHiVTmqW8Oacs+sJUVdnrZbxwm8fDS6Qr+U=
 			</data>
 		</dict>
 		<key>Frameworks/grpc.framework/grpc.bundle/Info.plist</key>
@@ -1551,7 +1552,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Qoqn//bh7/ZUO+5ZlcgN/9Yc7wQYKAoTsIOwGTFD0f8=
+			e2SmAWzOXpJ22HHlQ2FgHJj9TTYeKuC8BcJoskCw9U0=
 			</data>
 		</dict>
 	</dict>

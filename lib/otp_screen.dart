@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'registration_screen.dart'; // Импортируем экран регистрации
+import 'registration_screen.dart'; // Импорт экрана регистрации
 
 class OTPScreen extends StatelessWidget {
   final String verificationId;
-  final TextEditingController _codeController = TextEditingController();
+  final String phone;
+  final TextEditingController _codeController = TextEditingController(); // Контроллер для кода
 
-  OTPScreen({required this.verificationId});
+  OTPScreen({required this.verificationId, required this.phone}); // Конструктор принимает телефон
 
   Future<void> _verifyCode(BuildContext context) async {
     String code = _codeController.text;
@@ -19,16 +20,16 @@ class OTPScreen extends StatelessWidget {
 
     try {
       await FirebaseAuth.instance.signInWithCredential(credential);
-      // Переходим на экран регистрации после успешной верификации
+
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => RegistrationScreen(),
+          builder: (context) => RegistrationScreen(phone: phone), // Передаем телефон
         ),
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Ошибка при проверке кода")),
+        SnackBar(content: Text("Ошибка при верификации кода")),
       );
     }
   }
@@ -40,7 +41,7 @@ class OTPScreen extends StatelessWidget {
         title: Text("Подтверждение кода"),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0), // Отступы
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -48,9 +49,8 @@ class OTPScreen extends StatelessWidget {
               "Введите код, который вы получили.",
               style: TextStyle(fontSize: 18),
             ),
-            SizedBox(height: 10),
             TextField(
-              controller: _codeController,
+              controller: _codeController, // Поле для кода
               keyboardType: TextInputType.number,
               inputFormatters: [
                 LengthLimitingTextInputFormatter(6), // 6-значный код
@@ -58,7 +58,7 @@ class OTPScreen extends StatelessWidget {
               ],
               decoration: InputDecoration(
                 labelText: "Код подтверждения",
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(), // Граница
               ),
             ),
             SizedBox(height: 10),
