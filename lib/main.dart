@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
+<<<<<<< Updated upstream
+=======
+import 'package:firebase_core/firebase_core.dart'; // Импорт Firebase Core
+import 'firebase_options.dart'; // Опции Firebase, сгенерированные при настройке
+import 'mainscreen.dart'; // Предположим, что `MainScreen` в отдельном файле
+>>>>>>> Stashed changes
 
-void main() => runApp(Pomoikar());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); // Убедиться, что сервисы Flutter готовы
+  await Firebase.initializeApp( // Инициализация Firebase
+    options: DefaultFirebaseOptions.currentPlatform, // Используем опции из файла конфигурации
+  );
+
+  runApp(Pomoikar()); // Запуск вашего приложения
+}
 
 class Pomoikar extends StatelessWidget {
   @override
@@ -29,12 +42,17 @@ class _MainScreenState extends State<MainScreen> {
 
   void _onItemTapped(int index) {
     setState(() {
+<<<<<<< Updated upstream
       _selectedIndex = index;
+=======
+      _isDarkMode = !_isDarkMode; // Переключение между режимами
+>>>>>>> Stashed changes
     });
   }
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< Updated upstream
     return Scaffold(
       appBar: AppBar(
         title: Text('Pomoikar'),
@@ -69,6 +87,13 @@ class _MainScreenState extends State<MainScreen> {
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.deepOrange,
         onTap: _onItemTapped,
+=======
+    return MaterialApp(
+      theme: _isDarkMode ? ThemeData.dark() : ThemeData.light(), // Используем темную или светлую тему
+      home: MainScreen(
+        isDarkMode: _isDarkMode, // Передаем текущее состояние
+        toggleTheme: _toggleTheme, // Передаем функцию переключения
+>>>>>>> Stashed changes
       ),
     );
   }
